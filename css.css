@@ -1,0 +1,31 @@
+
+body{
+	background: url("images/background.png");
+	
+}
+.center{
+	text-align: center;
+       padding:100px;
+	
+}
+#main{
+   line-height: 50px;
+   text-align: center;
+   font-size: 50px;
+   color:blue;
+}
+.left{
+	margin-top: 70px;
+	margin-left: 200px;
+	float: left;
+	
+}
+.right{
+	margin-top: 200px;
+	margin-right: 200px;
+	float: right;
+	
+}
+.l_cai{
+	margin-top: 300px;
+}

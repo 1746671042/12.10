@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title>猜拳游戏</title>
+		<meta http-equiv="content-type" content="text/html; charset=gb2312" />
+	<link rel="stylesheet" href="css.css"type="text/css" />
+	</head>
+	<body>
+         
+	
+	</head>
+	<body>
+		<div class="center">
+		   <img src="images/shitou.gif" onclick="changehand(1);"/>&nbsp;&nbsp;&nbsp;&nbsp;
+		   <img src="images/jiandao.gif" onclick="changehand(2);"/>&nbsp;&nbsp;&nbsp;&nbsp;
+		   <img src="images/bu.gif" onclick="changehand(3);"/>&nbsp;&nbsp;&nbsp;
+		</div>
+		<div id="main">
+			<span >谁会获胜呢！</span>
+		</div>
+		<div id="people">
+			<div class="left"><img src="images/left.gif"/><img class="l_cai" src="images/zbu.gif" id="my"/></div>
+			<div class="right"><img class="r_cai" src="images/bu.gif" id="robot"/><img src="images/right.gif"/></div>	
+		</div>
+	</body>
+	
+	
+	
+	
+		<script type="text/javascript">
+		//1 石头 2 剪刀 3 步
+		var my = document.getElementById("my")
+		var robot= document.getElementById("robot")
+		   var my_index;
+			function changehand(num){
+				switch(num){
+					case 1:
+					my.src = "images/zshitou.gif";
+					break;
+				
+				
+					case 2:
+					my.src = "images/zjiandao.gif";
+					break;
+				
+			
+					case 3:
+					my.src = "images/zbu.gif";
+					break;
+				}
+			
+			
+		my_index=num ;	
+		var robot_index = (( parseInt(Math.random()*1000))%3)+1;
+			     switch(robot_index){
+					case 1:
+					robot.src = "images/shitou.gif";
+					break;
+				
+					case 2:
+					robot.src = "images/jiandao.gif";
+					break;
+			
+					case 3:
+					robot.src = "images/bu.gif";
+					break;
+				}
+			     
+            if(my_index==1){
+			     if(robot_index==1){
+			     	document.getElementById("main").innerHTML="平局"
+			     }
+			     else if(robot_index==2){
+			      document.getElementById("main").innerHTML="赢了"
+			     }
+			     else{
+			     	 document.getElementById("main").innerHTML="输了"
+			     }
+			     }
+            else if( my_index==2){
+            	if(robot_index==1){
+			     	document.getElementById("main").innerHTML="输了"
+			     }
+			     else if(robot_index==2){
+			      document.getElementById("main").innerHTML="平局"
+			     }
+			     else{
+			     	 document.getElementById("main").innerHTML="赢了"
+			     }
+                 }
+            else{
+            	if(robot_index==1){
+			     	document.getElementById("main").innerHTML="赢了"
+			     }
+			     else if(robot_index==2){
+			      document.getElementById("main").innerHTML="输了"
+			     }
+			     else{
+			     	 document.getElementById("main").innerHTML="平局"
+			     }
+            }
+             
+            
+			 }
+		
+			 
+		</script>
+</html>
